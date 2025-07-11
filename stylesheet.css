@@ -276,18 +276,25 @@ section {
 }
 
 .container1 {
-    width: 600px;
-    height: 500px;
-    padding: 75px 90px;
-    margin-left: 120px;
+    width: 100%;
+    max-width: 600px;
+    padding: 40px;
+    margin: 0 auto;
+   
+    
 }
 
 .heading1 {
     text-align: center;
     text-decoration: underline;
     text-underline-offset: 10px;
-    text-decoration-thickness: 5px;
-    margin-bottom: 50px;
+    text-decoration-thickness: 3px;
+    text-decoration-color: #0ef;
+    margin-bottom: 40px;
+    font-size: 32px;
+    color: #0ef;
+    opacity: 1 !important;
+    animation: none !important;
 }
 
 .bar {
@@ -346,7 +353,7 @@ section {
     width: 50%;
 }
 
-.progress-line.react span {
+.progress-line.React span {
     width: 75%;
 }
 
@@ -379,7 +386,7 @@ section {
     content: "50%";
 }
 
-.progress-line.react span::after {
+.progress-line.React span::after {
     content: "75%";
 }
 
@@ -410,43 +417,35 @@ section {
     }
 }
 
-.radial-bars{
-
-    width:100%;
-    display:flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
-    
-}
-
-.radial-bars .radial-bar{
-
-    width:50%;
-    height: 170px;
-    margin-bottom: 10px;
+.radial-bar {
     position: relative;
-
+    height: 180px;
+    width: 100%;
+    margin-bottom: 20px;
 }
 
-.radial-bars .radial-bar svg{
+.radial-bars {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
 
+.radial-bar svg {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, 50%) rotate(-90deg);
+    transform: translate(-50%, -50%) rotate(-90deg);
     width: 120px;
-    height: 160px;
+    height: 120px;
 }
 
-.radial-bars .radial-bar .progress-bar{
-    stroke-width: 10;
-    stop-color: black;
-    fill:transparent;
-    stroke-dashoffset: 502;
-    stroke-linecap: round;
-    animation: animate-bar 1s linear forwards;
 
+
+.progress-bar {
+    fill: transparent;
+    stroke: #081b29;
+    stroke-width: 10;
+    stroke-linecap: round;
 }
 
 @keyframes animate-bar{
@@ -455,19 +454,20 @@ section {
     }
 }
 
-.path{
+path {
+    fill: transparent;
     stroke-width: 10;
     stroke: #0ef;
-    fill:transparent;
+    stroke-linecap: round;
     stroke-dasharray: 502;
     stroke-dashoffset: 502;
-    stroke-linecap: round;
 }
 
-.path-1{animation: animate-path1 1s 1s linear forwards}
-.path-2{animation: animate-path2 1s 1s linear forwards}
-.path-3{animation: animate-path3 1s 1s linear forwards}
-.path-4{animation: animate-path4 1s 1s linear forwards}
+.path-1 { animation: animate-path1 1s 1s linear forwards; }
+.path-2 { animation: animate-path2 1s 1s linear forwards; }
+.path-3 { animation: animate-path3 1s 1s linear forwards; }
+.path-4 { animation: animate-path4 1s 1s linear forwards; }
+
 
 
 @keyframes animate-path1{
@@ -496,7 +496,31 @@ section {
         stroke-dashoffset: 75;
     }
 }
+ .percentage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    font-weight: 500;
+    color: #0ef;
+    opacity: 1 !important;
+    animation: none !important;
+}
 
+ .radial-bar .text {
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    left: 50%;
+    bottom: -25px;
+    transform: translateX(-50%);
+    font-size: 16px;
+    font-weight: 500;
+    color: #0ef;
+    opacity: 1 !important;
+    animation: none !important;
+}
 
 
 @keyframes slideRight {
@@ -545,4 +569,62 @@ section {
         transform: translateY(0px);
         opacity: 1;
     }
+}
+
+.main-text{
+
+    padding-top:130px;
+    margin-top: 200px;
+
+}
+
+.main-text h2{
+    font-size: 60px;
+    line-height: 1;
+    text-align: center;
+}
+
+.main-text h2 span{
+    color: #0ef;
+}
+
+.portfolio-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(359px,auto));
+
+}
+
+.row {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+
+}
+
+.row img{
+    width: 100%;
+    border-radius: 8px;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.layer{
+
+    width: 100%;
+    height: 0;
+    background: linear-gradient(rgba(0,0,0,0.1),#0ef);
+    position: absolute;
+    border-radius: 8px;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 40px;
+    transition:height 0.5s;
+
 }
