@@ -870,12 +870,4 @@ path {
             font-size: 14px;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .contact-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .contact-info h1 {
-                font-size: 50px;
-            }
+        
